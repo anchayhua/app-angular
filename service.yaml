@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-angular-service
+spec:
+  selector:
+    app: app-angular  # Debes ajustar esto según las etiquetas de tus pods
+  ports:
+    - protocol: TCP
+      port: 80         # Puerto del servicio dentro del clúster
+      targetPort: 80   # Puerto en el contenedor del microservicio
+  type: ClusterIP      # Tipo de servicio (puede cambiar según tus necesidades)

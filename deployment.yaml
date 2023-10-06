@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-angular-deployments
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-angular
+  template:
+    metadata:
+      labels:
+        app: app-angular
+    spec:
+      containers:
+      - name: app-angular
+        image: anchayhua/app-angular
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
